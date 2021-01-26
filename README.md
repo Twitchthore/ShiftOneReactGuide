@@ -9,12 +9,10 @@
    - [Naming](#naming)
    - [Methods](#methods)
 2. [Structure Guide](#structure-guide)
-   - [Basic Structure](#basic-strcture)     
+   - [Basic Structure](#basic-structure)     
    - [Templates](#templates)
 
 ## Style Guide
-
-
 ### Basic Rules
 
  - 1파일에는 1개의 React Component를 포함하는 것을 원칙으로 함.
@@ -74,6 +72,22 @@
          </BrowserRouter>
       }
    ```
-### Templates
-   - 전체 프로젝트에서 쓰이는 templates 컴포넌트(AppBar, Navigation, Drawer...)를 유지하면서 Routing에 따라서 View 부분만 inflate해준다.
+#### TheLayout.js
+   - 전체 프로젝트에서 쓰이는 templates 컴포넌트(AppBar, Navigation, Drawer...)를 유지하면서 Routing에 따라서 View 부분만 inflate해준다. 
+   ```
+   const TheLayout = () => {
+     return (
+      <div className="default-layout">
+         <TheSidebar/>
+         <div className="header-wrapper">
+            <TheHeader/>
+            <div className="body">
+               <TheContent/>
+            </div>
+            <TheFooter/>
+         </div>
+      </div>
+      );
+   }
+   ```
     
