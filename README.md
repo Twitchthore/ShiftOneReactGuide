@@ -90,4 +90,31 @@
       )
    }
    ```
+#### TheContent.js
+   - url이 변경될시에 routing 처리되어 변경된 view component를 렌더링해준다.
+   ```jsx
+   const TheContent = () => {
+      return(
+         <main>
+            <Container>
+               <Switch>
+                  {routes.map((route, idx) => {
+                      return route.component && (
+                        <Route
+                           key={idx}
+                           path={route.path}
+                           exact={route.exact}
+                           name={route.name}
+                           render={props => (
+                              <route.component {...props} />
+                           )} />
+                        )
+                      })}
+                 <Redirect from="/" to="/main" />
+               </Switch>
+            </Container>
+         </main>        
+      );
+   }
+   ```
 
