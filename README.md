@@ -9,6 +9,7 @@
    - [Naming](#naming)
    - [Methods](#methods)
 2. [Structure Guide](#structure-guide)
+   - [Basic Structure](#basic-strcture)     
    - [Templates](#templates)
 
 ## Style Guide
@@ -58,5 +59,21 @@
     }
    ```
 ## Structure Guide
+### Basic Structure
+#### App.js
+   - Default로 사용할 Layout Component와 Login, Page404 등 각 프로젝트마다 필요하게 될 Page Component를 라우팅 처리해준다.
+   ```jsx
+   render() {
+      return() (
+         <BrowserRouter>
+            <Switch>
+               <Route exact path="/login" name="Login Page" render={props => <Login {...props}/>} />
+               <Route exact path="/404" name="Page 404" render={props => <Page404 {...props}/>} />
+               <Route path="/" name="Home" render={props => <TheLayout {...props}/>} />
+            </Switch>
+         </BrowserRouter>
+      }
+   ```
 ### Templates
+   - 전체 프로젝트에서 쓰이는 templates 컴포넌트(AppBar, Navigation, Drawer...)를 유지하면서 Routing에 따라서 View 부분만 inflate해준다.
     
