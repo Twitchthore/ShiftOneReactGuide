@@ -74,7 +74,7 @@
    ```
 #### TheLayout.js
    - 전체 프로젝트에서 쓰이는 templates 컴포넌트(AppBar, Navigation, Drawer...)를 유지하면서 Routing에 따라서 View 부분만 inflate해준다. 
-   ```
+   ```jsx
    const TheLayout = () => {
      return (
       <div className="default-layout">
@@ -87,7 +87,7 @@
             <TheFooter/>
          </div>
       </div>
-      );
+      )
    }
    ```
-    
+
