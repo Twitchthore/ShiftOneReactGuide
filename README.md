@@ -8,6 +8,8 @@
    - [Basic Rules](#basic-rules)
    - [Naming](#naming)
    - [Methods](#methods)
+2. [Structure Guide](#structure-guide)
+   - [Templates](#templates)
 
 ## Style Guide
 
@@ -54,4 +56,7 @@
         </ul>
       );
     }
-    ```
+   ```
+## Structure Guide
+### Templates
+    
