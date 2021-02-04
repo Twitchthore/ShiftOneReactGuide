@@ -9,6 +9,7 @@
    - [Naming](#naming)
    - [Methods](#methods)
 2. [Structure Guide](#structure-guide)
+   - [File Structure](#file-structure)
    - [Basic Structure](#basic-structure)     
    - [Templates](#templates)
 
@@ -57,6 +58,15 @@
     }
    ```
 ## Structure Guide
+### File Structure
+```
+   +--src
+         +--containers
+         +--views
+         +--index.js
+         +--App.js
+         +--route.js
+```     
 ### Basic Structure
 #### App.js
    - Default로 사용할 Layout Component와 Login, Page404 등 각 프로젝트마다 필요하게 될 Page Component를 라우팅 처리해준다.
@@ -72,8 +82,18 @@
          </BrowserRouter>
       }
    ```
-#### TheLayout.js
-   - 전체 프로젝트에서 쓰이는 templates 컴포넌트(AppBar, Navigation, Drawer...)를 유지하면서 Routing에 따라서 View 부분만 inflate해준다. 
+### route.js
+   - 전체 프로젝트에서 사용되는 url과 연관된 컴포넌트의 정보를 담은 파일
+   ```jsx
+      import Dashboard from './views/dashboard';
+      
+      const routes = [
+         { path: '/', exact: true, name: 'Home' },
+         { path: '/dashboard', name: 'Dashboard', component: Dashboard }
+       ];
+   ```
+#### Containes/TheLayout.js
+   - 전체 프로젝트에서 사용되는 templates 컴포넌트(AppBar, Navigation, Drawer...)를 유지하면서 Routing에 따라서 View 부분만 inflate해준다. 
    ```jsx
    const TheLayout = () => {
      return (
@@ -90,7 +110,7 @@
       )
    }
    ```
-#### TheContent.js
+#### Containers/TheContent.js
    - url이 변경될시에 routing 처리되어 변경된 view component를 렌더링해준다.
    ```jsx
    const TheContent = () => {
