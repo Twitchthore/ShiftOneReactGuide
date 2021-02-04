@@ -12,6 +12,9 @@
    - [File Structure](#file-structure)
    - [Basic Structure](#basic-structure)     
    - [Templates](#templates)
+3. [Css Guide](#css-guide)
+4. [State Management](#state-management)
+5. [3rd Party Libaries](#3rdparty-libaries)
 
 ## Style Guide
 ### Basic Rules
@@ -137,4 +140,13 @@
       );
    }
    ```
-
+### Templates
+   - 전체 프로젝트에서 공통적으로 사용되는 Layout 컴포넌트들, SideBar, Header, Footer로 구성된다.
+#### Containers/TheSidebar.js
+   - 왼쪽이나 오른쪽에서 Header에 있는 NavBar와 연동해서 작동하는 Drawer
+   ```jsx
+   const TheSidebar = () => {
+   
+   }
+   ```
+   
